@@ -1,6 +1,6 @@
 # UWSGI: A Gentoo-based Docker Image
 
-A fairly standardized Docker Image, based on Hardened Gentoo, intended to run fairly standard Python 3.6 uwsgi applications.
+A Docker Image, based on Hardened Gentoo, intended to run pip installable Python 3.6 uwsgi applications.
 
 ## How to use it
 
@@ -8,7 +8,7 @@ Build an image for your app with a Dockerfile that looks like
 
 ```
 FROM kojiromike/uwsgi
-COPY Pipfile.* .
+COPY Pipfile.* uwsgi.ini .
 RUN ["pipenv", "install", "--system", "--deploy"]
 ```
 
