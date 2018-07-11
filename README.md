@@ -7,7 +7,7 @@ A Docker Image, based on Hardened Gentoo, intended to run pip installable Python
 Build an image for your app with a Dockerfile that looks like
 
 ```
-FROM kojiromike/uwsgi
+FROM kojiromike/docker-gentoo-uwsgi
 COPY Pipfile.* uwsgi.ini .
 RUN ["pipenv", "install", "--system", "--deploy"]
 ```
