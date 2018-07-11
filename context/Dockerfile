@@ -1,5 +1,6 @@
 FROM gentoo/stage3-amd64-hardened-nomultilib as main
 COPY --from=gentoo/portage /usr/portage /usr/portage
-RUN eselect news purge
 COPY etc/portage /etc/portage
+RUN eselect news purge
+RUN emerge -uDN @system
 RUN emerge -uDN @world
