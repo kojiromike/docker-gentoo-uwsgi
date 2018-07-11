@@ -23,3 +23,13 @@ Then run it like
 ```
 docker run my_app
 ```
+
+## How to Collaborate
+
+I need lots of help with this. The rules are:
+
+1. Be kind.
+1. Keep to the interface described above.
+1. Make the image small.
+
+The rules are in priority order, so a bigger image is preferred to a small image that has a different use, and I reserve the right to decline your contribution if I think you are being unkind.
