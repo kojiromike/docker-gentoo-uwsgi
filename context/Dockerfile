@@ -1,7 +1,6 @@
-FROM gentoo/stage3-amd64-hardened-nomultilib as main
-COPY --from=gentoo/portage /usr/portage /usr/portage
-COPY etc/portage /etc/portage
-RUN eselect news read --quiet all \
- && eselect news purge
-RUN emerge -uDN @system
-RUN emerge -uDN @world
+FROM kojiromike/docker-gentoo-build-base
+RUN emerge uwsgi
+WORKDIR /srv
+COPY example.py .
+ENTRYPOINT ["uwsgi_python36"]
+CMD ["--http", ":8080", "--wsgi-file", "example.py"]
