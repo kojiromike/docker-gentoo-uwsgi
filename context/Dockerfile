@@ -1,6 +1,7 @@
 FROM kojiromike/docker-gentoo-build-base
-RUN emerge uwsgi
+RUN ["emerge", "uwsgi"]
 WORKDIR /srv
-COPY example.py .
+EXPOSE 80
 ENTRYPOINT ["uwsgi_python36"]
-CMD ["--http", ":8080", "--wsgi-file", "example.py"]
+CMD ["--http", ":80", "--wsgi-file", "example.py"]
+COPY example.py .
